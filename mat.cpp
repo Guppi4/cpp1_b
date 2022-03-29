@@ -55,7 +55,7 @@ namespace ariel
           //cout << endl;
            
        }
-    vector<vector<char>> arr1( col, vector<char>( row ) );
+    vector<vector<char>> arr1( col, vector<char>( row ) );//v
   
                 
     
