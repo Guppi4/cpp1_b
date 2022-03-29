@@ -67,13 +67,13 @@ TEST_CASE("Bad input")
     //2
     CHECK_THROWS(mat(0, 7, '@', '-'));
     //3
-    CHECK_THROWS(mat(3, 0, '@', '-'));
+    CHECK_THROWS(mat(9, 0, '@', '-'));
     //4
-    CHECK_THROWS(mat(-3, 7, '@', '-'));
+    CHECK_THROWS(mat(-7, 7, '@', '-'));
     //5
     CHECK_THROWS(mat(7, -1, '@', '-'));
     //6
-    CHECK_THROWS(mat(-3, -7, '@', '-'));
+    CHECK_THROWS(mat(-9, -7, '@', '-'));
     //7
     CHECK_THROWS(mat(2, 2, '@', '-'));
     //8
@@ -81,7 +81,7 @@ TEST_CASE("Bad input")
     //9
     CHECK_THROWS(mat(7, 4, '@', '-'));
     //10
-    CHECK_THROWS(mat(2, 3, '@', '@'));
+    CHECK_THROWS(mat(4, 3, '@', '@'));
     
  
 }
