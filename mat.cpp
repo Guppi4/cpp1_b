@@ -9,32 +9,34 @@ namespace ariel
 {
   void paint1(vector<vector<char>> &arr, int col, int row, char s1, char s2, int median)
   {
-   for(int j=0;j<row;j++){
-          for(int j1=0;j1<col;j1++){
-                if(j<=median &&  j%2==0 && j1<(col-j) && j1>=j ){
-                    if(arr[j][j1]!=s1){
-                    arr[j][j1]=s1;
-                   
-                   continue;
-                    }
-                        
-                }  
-     if(j>median &&  j%2==0 && j1<(col-(row-j-1)) && j1>=(row-j-1) ){
-                   if(arr[j][j1]!=s1){
-                    arr[j][j1]=s1;
-                   
-                   continue;
-                    }
-                 }
-                 
-                 
-                
-                  arr[j][j1]=s2;
-            }
-          // cout<<j/2 <<endl;
-          //cout << endl;
-           
-       }
+    for (int j = 0; j < row; j++)
+    {
+      for (int j1 = 0; j1 < col; j1++)
+      {
+        if (j <= median && j % 2 == 0 && j1 < (col - j) && j1 >= j)
+        {
+          if (arr[j][j1] != s1)
+          {
+            arr[j][j1] = s1;
+
+            continue;
+          }
+        }
+        if (j > median && j % 2 == 0 && j1 < (col - (row - j - 1)) && j1 >= (row - j - 1))
+        {
+          if (arr[j][j1] != s1)
+          {
+            arr[j][j1] = s1;
+
+            continue;
+          }
+        }
+
+        arr[j][j1] = s2;
+      }
+      // cout<<j/2 <<endl;
+      // cout << endl;
+    }
   }
   void paint2(vector<vector<char>> &arr1, int col, int row, char s1, char s2, int median)
   {
@@ -59,7 +61,7 @@ namespace ariel
           arr1[j][j1] = s2;
           continue;
         }
-      }   
+      }
     }
   }
   string mat(int a, int b, char c, char d)
@@ -80,7 +82,7 @@ namespace ariel
     {
       throw runtime_error("negative");
     }
-    paint1(arr,a,b,c,d,median);
+    paint1(arr, a, b, c, d, median);
     vector<vector<char>> arr1(col, vector<char>(row)); // vector for reverse 2
     for (int i = 0; i < col; ++i)
     {
@@ -89,15 +91,15 @@ namespace ariel
         arr1[i][j] = arr[j][i];
       } //
     }
-    paint2(arr1,a,b,c,d,median);
-     for (int i = 0; i < row; ++i)// reverse
-    { 
+    paint2(arr1, a, b, c, d, median);
+    for (int i = 0; i < row; ++i) // reverse
+    {
       for (int j = 0; j < col; ++j)
       {
         arr[i][j] = arr1[j][i];
       }
     }
-    for (int i = 0; i < row; i++)//add to string
+    for (int i = 0; i < row; i++) // add to string
     {
       for (int j = 0; j < col; j++)
       {
@@ -108,4 +110,3 @@ namespace ariel
     return s;
   }
 }
-  
